@@ -42,22 +42,22 @@ void loop()
     Serial.println(yread);
 
     //According to the position of the joystick, turn LED on
-    if((xread >=0 && xread <= 1010) && (yread > 459 && yread <= 1010))
+    if(yread >= 800)
     {
       digitalWrite(UP,HIGH);
     }
 
-    if((xread > 459 && xread <= 1010) && (yread >= 0 && yread <= 1010))
+    if(xread >= 800)
     {
       digitalWrite(LEFT,HIGH);
     }
 
-    if((xread >=0 && xread <= 1010) && (yread >= 0 && yread < 459))
+    if(yread == 0)
     {
       digitalWrite(DOWN,HIGH);
     }
 
-    if((xread >=0 && xread < 459) && (yread >= 0 && yread <= 1010))
+    if(xread == 0)
     {
       digitalWrite(RIGHT,HIGH);
     }
